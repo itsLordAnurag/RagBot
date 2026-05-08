@@ -32,7 +32,7 @@ if "session_id" not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())
 
 st.set_page_config(page_title="ExamGPT",layout="wide")
-set_background("/home/anurag/c codes/python-development/ragbot/ragbot/w1.jpg")
+set_background("./w1.jpg")
 
 st.title("ExamGPT")
 
