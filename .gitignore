@@ -1,0 +1,13 @@
+# Environments
+.env
+venv/
+env/
+myenv_server/
+myenv_client/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+uploaded_pdfs

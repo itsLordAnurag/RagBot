@@ -1,0 +1,41 @@
+/* Glassmorphism Chat Messages */
+[data-testid="stChatMessage"] {
+    background: rgba(15, 15, 15, 0.65) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    color: white !important;
+}
+
+/* Glassmorphism Sidebar */
+[data-testid="stSidebar"] > div:first-child {
+    background: rgba(10, 10, 10, 0.5) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Input Box Glass */
+[data-testid="stChatInput"] {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+}
+
+/* Buttons hover effect */
+.stButton>button {
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+.stButton>button:hover {
+    box-shadow: 0 0 15px rgba(255,255,255,0.3) !important;
+    transform: scale(1.02) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
