@@ -1,4 +1,4 @@
-# ExamGPT (RagBot 2.0) 🤖📚
+# ExamGPT (RagBot 2.0) 
 
 ExamGPT is a modern, responsive Retrieval-Augmented Generation (RAG) chatbot designed to help students and researchers interact with their study materials (PDFs, textbook chapters, lecture notes, etc.). 
 
