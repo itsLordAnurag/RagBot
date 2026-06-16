@@ -8,10 +8,10 @@ import os
 import base64
 
 def set_background(image_filename):
-    # Dynamically get the folder where app.py is located
+    # Dynamically geting the folder where app.py is located
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Safely construct absolute paths for both files
+    #Safely constructing absolute paths for both files
     image_path = os.path.join(current_dir, image_filename)
     css_path = os.path.join(current_dir, "styles.css")
 

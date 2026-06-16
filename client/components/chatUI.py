@@ -18,7 +18,6 @@ def render_chat():
         avatar = "🧑‍🎓" if msg["role"] == "user" else "🤖"
         st.chat_message(msg["role"], avatar=avatar).markdown(msg["content"])
 
-    # Quick Prompts
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("##### ⚡ Quick Actions")
     col1, col2, col3 = st.columns(3)

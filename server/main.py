@@ -10,7 +10,6 @@ import os
 
 app=FastAPI(title="RagBot2.0")
 
-# allow frontend
 
 app.add_middleware(
     CORSMiddleware,
@@ -86,18 +85,18 @@ def ask_question(session_id: str, question: str = Form(...), groq_api_key: str =
         from modules.query_handlers import query_chain
         import os
 
-        # 1. Pinecone + Embedding setup
+        # Pinecone and Embedding setup
         pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
         index = pc.Index(os.getenv("PINECONE_INDEX_NAME", "medical-index-v2"))
         embed_model = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-2")
 
-        # 2. Embed the question
+        # Embed the question
         embedded_query = embed_model.embed_query(question)
 
-        # 3. Query Pinecone
+        #  Query Pinecone
         res = index.query(vector=embedded_query, top_k=3, include_metadata=True, namespace=session_id)
 
-        # 4. Convert to LangChain Documents
+        #  Convert to LangChain Documents
         docs = [
             Document(
                 page_content=match["metadata"].get("text", ""),
@@ -105,7 +104,7 @@ def ask_question(session_id: str, question: str = Form(...), groq_api_key: str =
             ) for match in res["matches"]
         ]
 
-        # 5. Pydantic-compliant retriever subclass
+        # Pydantic compliant retriever subclass
         class SimpleRetriever(BaseRetriever):
             tags: Optional[List[str]] = Field(default_factory=list)
             metadata: Optional[dict] = Field(default_factory=dict)
@@ -119,7 +118,7 @@ def ask_question(session_id: str, question: str = Form(...), groq_api_key: str =
 
         retriever = SimpleRetriever(docs)
 
-        # 6. LLM + RetrievalQA chain
+        # LLM  and RetrievalQA chain
         chain = get_llm_chain(retriever, groq_api_key)
         result = query_chain(chain, question)
 
